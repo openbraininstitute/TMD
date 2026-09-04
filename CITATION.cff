@@ -35,7 +35,7 @@ identifiers:
   - type: doi
     value: 10.1007/s12021-017-9341-1
     description: The DOI of the related article.
-repository-code: 'https://github.com/BlueBrain/TMD'
+repository-code: 'https://github.com/openbraininstitute/TMD'
 abstract: >-
   Many biological systems consist of branching
   structures that exhibit a wide variety of shapes.
