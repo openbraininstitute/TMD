@@ -39,6 +39,9 @@ extensions = [
 
 todo_include_todos = True
 
+# Required for sphinx-bluebrain-theme autodoc overrides with Sphinx 9+.
+autodoc_use_legacy_class_based = True
+
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
 
