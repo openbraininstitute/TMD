@@ -22,8 +22,7 @@ from matplotlib.collections import LineCollection as _LC
 
 from tmd.Topology.methods import _filtration_function
 from tmd.Topology.methods import tree_to_property_barcode as tp_barcode
-from tmd.utils import TREE_TYPE_DICT
-from tmd.utils import term_dict
+from tmd.utils import TREE_TYPE_DICT, term_dict
 from tmd.view import common as cm
 from tmd.view import plot
 from tmd.view.common import blues_map
@@ -293,7 +292,7 @@ def neuron(
             or in new axes (True).
             Default value is True.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.view.soma`,
             :func:`tmd.view.view.tree` and :func:`tmd.view.common.plot_style`.
@@ -402,7 +401,7 @@ def all_trunks(
         N (float):
             Half of the window size used if xlim and ylim are not given.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 
@@ -479,7 +478,7 @@ def population(
         N (float):
             Half of the window size used if xlim and ylim are not given.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`soma`, :func:`tree` and
             :func:`tmd.view.common.plot_style`.
@@ -663,7 +662,7 @@ def trunk3d(tr, new_fig=True, new_axes=True, subplot=False, N=10, **kwargs):
         N (int):
             The number of segments to plot.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 
@@ -748,7 +747,7 @@ def soma3d(sm, new_fig=True, new_axes=True, subplot=False, **kwargs):
             will be generated.
             Default value is False.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 
@@ -818,7 +817,7 @@ def neuron3d(nrn, new_fig=True, new_axes=True, subplot=False, neurite_type="all"
         neurite_type (str):
             The types of neurites that should be plotted.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 
@@ -900,7 +899,7 @@ def all_trunks3d(
         N (float):
             Half of the window size used if xlim and ylim are not given.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 
@@ -963,7 +962,7 @@ def population3d(pop, new_fig=True, new_axes=True, subplot=False, **kwargs):
             will be generated.
             Default value is False.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 
@@ -1156,7 +1155,7 @@ def _tree_colors(
             will be generated.
             Default value is False.
 
-    Keyword args:
+    Keyword Args:
         **kwargs:
             All keyword arguments will be passed to :func:`tmd.view.common.plot_style`.
 

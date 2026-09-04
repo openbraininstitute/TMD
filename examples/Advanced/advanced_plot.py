@@ -1,18 +1,17 @@
 """Example script of plotting functions of tmd (untested and more complex plotting)."""
+
 import common as _cm
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import numpy as _np
 import view as _view
 from scipy import stats
+from tmd.analysis import sort_ph
 
 from tmd import Topology as _tm
 from tmd import utils as _utils
 from tmd import view
-from tmd.analysis import sort_ph
-from tmd.view.plot import barcode
-from tmd.view.plot import diagram
-from tmd.view.plot import persistence_image
+from tmd.view.plot import barcode, diagram, persistence_image
 
 
 def _sort_ph_radii(ph):
@@ -969,7 +968,7 @@ def plot_persistent_homology_video(
     beg = _np.array(beg)
     end = _np.array(end)
 
-    parents = {e: b for b, e in zip(beg, end)}
+    parents = {e: b for b, e in zip(beg, end, strict=False)}
     children = {b: end[_np.where(beg == b)[0]] for b in _np.unique(beg)}
 
     colors_bar = _np.array([c3 for s in range(len(ph_all))])

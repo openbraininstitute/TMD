@@ -90,7 +90,7 @@ def closest_ph(ph_list, target_extent, method="from_above"):
 
 def load_file(filename, delimiter=" "):
     """Load PH file in a `np.array`."""
-    with open(filename, "r", encoding="utf-8") as f:
+    with open(filename, encoding="utf-8") as f:
         ph = np.array([np.array(line.split(delimiter), dtype=float) for line in f])
     return ph
 
@@ -212,7 +212,7 @@ def get_average_persistence_image(ph_list, xlim=None, ylim=None, norm_factor=Non
     else:
         weights = [1 for _ in ph_list]
 
-    for weight, ph in zip(weights, ph_list):
+    for weight, ph in zip(weights, ph_list, strict=False):
         if not isinstance(im_av, np.ndarray):
             try:
                 im = persistence_image_data(ph, norm_factor=norm_factor, xlim=xlim, ylim=ylim)

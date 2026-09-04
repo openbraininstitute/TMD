@@ -17,9 +17,7 @@
 
 import numpy as np
 
-from .vectorizations import betti_curve
-from .vectorizations import life_entropy_curve
-from .vectorizations import persistence_image_data
+from .vectorizations import betti_curve, life_entropy_curve, persistence_image_data
 
 
 def total_betti_diff(ph1, ph2, bins=None, num_bins=1000):

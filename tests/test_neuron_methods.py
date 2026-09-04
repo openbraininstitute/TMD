@@ -1,4 +1,5 @@
 """Test tmd.Neuron."""
+
 import numpy as np
 from numpy import testing as npt
 

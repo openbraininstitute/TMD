@@ -1,4 +1,5 @@
 """Test tmd.topology.analysis."""
+
 import os
 
 import numpy as np

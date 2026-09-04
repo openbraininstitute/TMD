@@ -1,13 +1,13 @@
 """Test tmd.topology.methods."""
+
 # pylint: disable=protected-access
 import os
+from unittest import mock
 
-import mock
 import numpy as np
 from numpy import testing as npt
 
-from tmd.Topology import analysis
-from tmd.Topology import methods
+from tmd.Topology import analysis, methods
 from tmd.Tree import Tree
 
 _path = os.path.dirname(os.path.abspath(__file__))

@@ -1,4 +1,5 @@
 """Example script of classification."""
+
 import numpy as np
 
 list_of_modules = ["discriminant_analysis", "discriminant_analysis", "tree"]
@@ -80,7 +81,7 @@ def leave_one_out_statistics(mod, classifier, data, labels, N=10, **kwargs):
         clf = train(mod, classifier, train_data, train_labels, **kwargs)
 
         all_results = []
-        for i in range(N):
+        for _i in range(N):
             all_results.append(predict(clf, data[ed]))
 
         predict_label = predict(clf, data[ed])
@@ -181,7 +182,7 @@ def leave_one_out_multiple(mod, classifier, data, labels, n=10, **kwargs):
 
         print("The individual " + str(ed) + " is of type ")
 
-        for ni in range(n):
+        for _ni in range(n):
             train_data = data[np.delete(range(sample_size), ed)]
             train_labels = labels[np.delete(range(sample_size), ed)]
 

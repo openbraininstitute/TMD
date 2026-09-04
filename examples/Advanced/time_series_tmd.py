@@ -1,4 +1,5 @@
 """Example script for time series."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -174,7 +175,7 @@ def vineyards(ph_list):
 
     speeds = []
 
-    for ip, p in enumerate(ph_list[:-1]):
+    for ip, _p in enumerate(ph_list[:-1]):
         sp = marry_components(ph_list[ip], ph_list[ip + 1], z1=ip * 0.2, z2=(ip + 1) * 0.2)
         speeds.append(sp)
         # ax = plt.gca()
@@ -187,7 +188,7 @@ def get_persistence_diagram_timelapse(trees, **kwargs):
     ph = []
 
     for itr, tree in enumerate(trees):
-        rd = getattr(tree, "get_point_radial_distances_time")(time=itr, **kwargs)
+        rd = tree.get_point_radial_distances_time(time=itr, **kwargs)
 
         active = tree.get_bif_term() == 0
 
@@ -196,7 +197,7 @@ def get_persistence_diagram_timelapse(trees, **kwargs):
         beg = np.array(beg)
         end = np.array(end)
 
-        parents = {e: b for b, e in zip(beg, end)}
+        parents = {e: b for b, e in zip(beg, end, strict=False)}
         children = {b: end[np.where(beg == b)[0]] for b in np.unique(beg)}
 
         while len(np.where(active)[0]) > 1:

@@ -48,6 +48,7 @@ class Population:
         warnings.warn(
             "The 'apical' property is deprecated, please use 'apical_dendrite' instead",
             DeprecationWarning,
+            stacklevel=2,
         )
         return self.apical_dendrite
 
@@ -62,6 +63,7 @@ class Population:
         warnings.warn(
             "The 'basal' property is deprecated, please use 'basal_dendrite' instead",
             DeprecationWarning,
+            stacklevel=2,
         )
         return self.basal_dendrite
 

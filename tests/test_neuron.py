@@ -1,4 +1,5 @@
 """Test tmd.Neuron."""
+
 # pylint: disable=use-implicit-booleaness-not-comparison
 import numpy as np
 

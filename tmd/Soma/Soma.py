@@ -31,8 +31,7 @@ class Soma:
     """
 
     # pylint: disable=import-outside-toplevel
-    from tmd.Soma.methods import get_center
-    from tmd.Soma.methods import get_diameter
+    from tmd.Soma.methods import get_center, get_diameter
 
     def __init__(self, x=None, y=None, z=None, d=None):
         """Constructor for tmd Soma Object."""

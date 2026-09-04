@@ -1,4 +1,5 @@
 """Test tmd.io."""
+
 import glob
 import os
 from pathlib import Path
@@ -117,7 +118,7 @@ def test_load_population(POP_PATH):
         match=(
             "The format of the given neurons is not supported. "
             "Expected an iterable of files, or a directory, or a single morphology file. "
-            f'Got: {os.path.join(POP_PATH, "UNKNOWN")}'
+            f"Got: {os.path.join(POP_PATH, 'UNKNOWN')}"
         ),
     ):
         io.load_population(os.path.join(POP_PATH, "UNKNOWN"))
@@ -128,7 +129,7 @@ def test_load_population(POP_PATH):
         match=(
             "The format of the given neurons is not supported. "
             "Expected an iterable of files, or a directory, or a single morphology file. "
-            f'Got: {Path(os.path.join(POP_PATH, "UNKNOWN"))}'
+            f"Got: {Path(os.path.join(POP_PATH, 'UNKNOWN'))}"
         ),
     ):
         io.load_population(Path(os.path.join(POP_PATH, "UNKNOWN")))

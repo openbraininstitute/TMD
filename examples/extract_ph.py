@@ -2,8 +2,7 @@
 
 # Step 1: Import the tmd module
 import tmd
-from tmd.view import plot
-from tmd.view import view
+from tmd.view import plot, view
 
 # Step 2: Load your morphology
 filename = "../tests/data/valid/C010398B-P2.CNG.swc"

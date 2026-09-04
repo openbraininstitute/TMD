@@ -35,25 +35,27 @@ class Tree:
     """
 
     # pylint: disable=import-outside-toplevel
-    from tmd.Tree.methods import get_bif_term
-    from tmd.Tree.methods import get_bifurcations
-    from tmd.Tree.methods import get_bounding_box
-    from tmd.Tree.methods import get_direction_between
-    from tmd.Tree.methods import get_multifurcations
-    from tmd.Tree.methods import get_pca
-    from tmd.Tree.methods import get_point_path_distances
-    from tmd.Tree.methods import get_point_projection
-    from tmd.Tree.methods import get_point_radial_distances
-    from tmd.Tree.methods import get_point_radial_distances_time
-    from tmd.Tree.methods import get_point_section_branch_orders
-    from tmd.Tree.methods import get_point_section_lengths
-    from tmd.Tree.methods import get_point_weighted_radial_distances
-    from tmd.Tree.methods import get_sections_2
-    from tmd.Tree.methods import get_sections_only_points
-    from tmd.Tree.methods import get_segments
-    from tmd.Tree.methods import get_terminations
-    from tmd.Tree.methods import get_trunk_length
-    from tmd.Tree.methods import get_type
+    from tmd.Tree.methods import (
+        get_bif_term,
+        get_bifurcations,
+        get_bounding_box,
+        get_direction_between,
+        get_multifurcations,
+        get_pca,
+        get_point_path_distances,
+        get_point_projection,
+        get_point_radial_distances,
+        get_point_radial_distances_time,
+        get_point_section_branch_orders,
+        get_point_section_lengths,
+        get_point_weighted_radial_distances,
+        get_sections_2,
+        get_sections_only_points,
+        get_segments,
+        get_terminations,
+        get_trunk_length,
+        get_type,
+    )
 
     def __init__(self, x, y, z, d, t, p):
         """Constructor of tmd Tree Object."""
@@ -156,7 +158,7 @@ class Tree:
             If 0 exists in starting nodes, the parent from tree is assigned
         """
         begs, ends = self.sections
-        parents = {e: b for b, e in zip(begs, ends)}
+        parents = {e: b for b, e in zip(begs, ends, strict=False)}
 
         if 0 in begs:
             parents[0] = self.p[0]

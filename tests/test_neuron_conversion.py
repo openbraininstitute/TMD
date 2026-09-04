@@ -1,15 +1,15 @@
 """Test Neuron conversions."""
+
 # pylint: disable=protected-access
 import os
+from unittest import mock
 
-import mock
 import morphio
 import numpy as np
 from numpy import testing as npt
 
 from tmd.io import conversion as tested
-from tmd.io.io import load_neuron
-from tmd.io.io import load_neuron_from_morphio
+from tmd.io.io import load_neuron, load_neuron_from_morphio
 
 _path = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(_path, "data")
@@ -152,7 +152,7 @@ def _assert_neurons_equal(neuron1, neuron2):
     npt.assert_allclose(neuron1.soma.z, neuron2.soma.z)
     npt.assert_allclose(neuron1.soma.d, neuron2.soma.d)
 
-    for neurite1, neurite2 in zip(neuron1.neurites, neuron2.neurites):
+    for neurite1, neurite2 in zip(neuron1.neurites, neuron2.neurites, strict=False):
         npt.assert_allclose(neurite1.x, neurite2.x)
         npt.assert_allclose(neurite1.y, neurite2.y)
         npt.assert_allclose(neurite1.z, neurite2.z)

@@ -35,8 +35,7 @@ class Neuron:
     """
 
     # pylint: disable=import-outside-toplevel
-    from tmd.Neuron.methods import get_bounding_box
-    from tmd.Neuron.methods import size
+    from tmd.Neuron.methods import get_bounding_box, size
 
     def __init__(self, name="Neuron"):
         """Creates an empty Neuron object."""
@@ -63,6 +62,7 @@ class Neuron:
         warnings.warn(
             "The 'apical' property is deprecated, please use 'apical_dendrite' instead",
             DeprecationWarning,
+            stacklevel=2,
         )
         return self.apical_dendrite
 
@@ -72,6 +72,7 @@ class Neuron:
         warnings.warn(
             "The 'basal' property is deprecated, please use 'basal_dendrite' instead",
             DeprecationWarning,
+            stacklevel=2,
         )
         return self.basal_dendrite
 
@@ -106,7 +107,9 @@ class Neuron:
         eq = np.all(
             [
                 self.soma.is_equal(neu.soma),
-                np.all([t1.is_equal(t2) for t1, t2 in zip(self.neurites, neu.neurites)]),
+                np.all(
+                    [t1.is_equal(t2) for t1, t2 in zip(self.neurites, neu.neurites, strict=False)]
+                ),
             ]
         )
         return eq
@@ -117,7 +120,9 @@ class Neuron:
             [
                 self.name == neu.name,
                 self.soma.is_equal(neu.soma),
-                np.all([t1.is_equal(t2) for t1, t2 in zip(self.neurites, neu.neurites)]),
+                np.all(
+                    [t1.is_equal(t2) for t1, t2 in zip(self.neurites, neu.neurites, strict=False)]
+                ),
             ]
         )
         return eq
