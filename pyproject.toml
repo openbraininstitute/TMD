@@ -5,6 +5,69 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "TMD"
+description = "A python package for the topological analysis of neurons."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GNU Lesser General Public License v3.0"}
+authors = [
+    {name = "Blue Brain Project, EPFL"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "h5py>=3.6.0",
+    "scipy>=1.8.0",
+    "numpy>=1.22.0",
+    "scikit-learn>=1.0.2",
+    "munkres>=1.0.12",
+    "cached-property>=1.5.1",
+    "morphio>=3.3.4,<4",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+docs = [
+    "m2r2",
+    "sphinx",
+    "sphinx-bluebrain-theme",
+    "sphinx-click",
+    "docutils<0.21",
+]
+test = [
+    "mock>=3",
+    "pytest>=7",
+    "pytest-cov>=3",
+    "pytest-html>=3.2.0",
+]
+viewer = [
+    "matplotlib>=3.4.0",
+]
+
+[project.urls]
+Homepage = "https://TMD.readthedocs.io"
+Tracker = "https://github.com/BlueBrain/TMD/issues"
+Source = "https://github.com/BlueBrain/TMD"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["tmd*"]
+namespaces = true
+
 [tool.setuptools_scm]
 
 [tool.pytest.ini_options]
@@ -15,7 +78,7 @@ testpaths = [
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-include = ["pyproject.toml", "tmd/**/*.py", "tests/**/*.py", "examples/**/*.py", "setup.py"]
+include = ["pyproject.toml", "tmd/**/*.py", "tests/**/*.py", "examples/**/*.py", "tools/**/*.py"]
 
 [tool.ruff.lint]
 select = [
