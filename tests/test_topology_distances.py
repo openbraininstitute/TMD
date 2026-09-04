@@ -1,4 +1,5 @@
 """Test tmd.topology.analysis."""
+
 from numpy import testing as npt
 
 from tmd.Topology import distances

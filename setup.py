@@ -1,8 +1,8 @@
 """Setup for the TMD package."""
+
 from pathlib import Path
 
-from setuptools import find_namespace_packages
-from setuptools import setup
+from setuptools import find_namespace_packages, setup
 
 reqs = [
     "h5py>=2.9.0",
@@ -42,7 +42,7 @@ setup(
     },
     license="GNU Lesser General Public License v3.0",
     packages=find_namespace_packages(include=["tmd*"]),
-    python_requires=">=3.8",
+    python_requires=">=3.10",
     use_scm_version=True,
     setup_requires=[
         "setuptools_scm",
@@ -60,10 +60,11 @@ setup(
         "Intended Audience :: Science/Research",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
         "Topic :: Scientific/Engineering :: Bio-Informatics",
     ],
 )

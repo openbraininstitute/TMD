@@ -23,7 +23,7 @@ from .statistics import get_lengths
 
 def get_limits(phs_list):
     """Returns the x-y coordinates limits (min, max) for a list of persistence diagrams."""
-    if any((isinstance(ph[0], list) for ph in phs_list)):
+    if any(isinstance(ph[0], list) for ph in phs_list):
         phs = [list(ph_bar) for ph in phs_list for ph_bar in ph]
     else:
         phs = phs_list
@@ -108,7 +108,9 @@ def life_entropy_curve(ph_diagram, bins=None, num_bins=1000):
     else:
         t_list = bins
     t_entropy = [
-        -np.sum([_index_bar(ph_bar, t) * e for (e, ph_bar) in zip(entropy, ph_diagram)])
+        -np.sum(
+            [_index_bar(ph_bar, t) * e for (e, ph_bar) in zip(entropy, ph_diagram, strict=False)]
+        )
         for t in t_list
     ]
     return t_entropy, t_list

@@ -28,7 +28,7 @@ SWC_DCT = {"index": 0, "type": 1, "x": 2, "y": 3, "z": 4, "radius": 5, "parent":
 def read_swc(input_file, line_delimiter="\n"):
     """Load a swc file containing a list of sections, into a 'Data' format."""
     # Read all data from file.
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(input_file, encoding="utf-8") as f:
         read_data = f.read()
 
     # Split data per lines

@@ -219,7 +219,7 @@ def get_point_section_lengths(self):
     ways, end = self.get_sections_only_points()
     seg_len = get_segment_lengths(self)
 
-    for start_id, end_id in zip(ways, end):
+    for start_id, end_id in zip(ways, end, strict=False):
         lengths[end_id] = np.sum(seg_len[max(0, start_id - 1) : end_id])
 
     return lengths

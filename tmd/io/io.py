@@ -23,19 +23,14 @@ import numpy as _np
 from scipy import sparse as sp
 from scipy.sparse import csgraph as cs
 
-from tmd.io.conversion import convert_morphio_soma
-from tmd.io.conversion import convert_morphio_trees
+from tmd.io.conversion import convert_morphio_soma, convert_morphio_trees
 from tmd.io.h5 import read_h5
-from tmd.io.swc import SWC_DCT
-from tmd.io.swc import read_swc
-from tmd.io.swc import swc_to_data
+from tmd.io.swc import SWC_DCT, read_swc, swc_to_data
 from tmd.Neuron import Neuron
 from tmd.Population import Population
 from tmd.Soma import Soma
 from tmd.Tree import Tree
-from tmd.utils import SOMA_TYPE
-from tmd.utils import TREE_TYPE_DICT
-from tmd.utils import TmdError
+from tmd.utils import SOMA_TYPE, TREE_TYPE_DICT, TmdError
 
 
 class LoadNeuronError(TmdError):
@@ -106,7 +101,7 @@ def load_neuron(
     # Check for duplicated IDs
     IDs, counts = _np.unique(data[:, 0], return_counts=True)
     if (counts != 1).any():
-        warnings.warn(f"The following IDs are duplicated: {IDs[counts > 1]}")
+        warnings.warn(f"The following IDs are duplicated: {IDs[counts > 1]}", stacklevel=2)
 
     data_T = _np.transpose(data)
 

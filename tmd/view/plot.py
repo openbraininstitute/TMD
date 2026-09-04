@@ -18,9 +18,7 @@
 import numpy as np
 from matplotlib import pylab as plt
 
-from tmd.Topology import analysis
-from tmd.Topology import distances
-from tmd.Topology import vectorizations
+from tmd.Topology import analysis, distances, vectorizations
 from tmd.Topology.statistics import transform_ph_to_length
 from tmd.view import common as cm
 from tmd.view.common import jet_map

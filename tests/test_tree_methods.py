@@ -1,4 +1,5 @@
 """Test tmd.Tree methods."""
+
 # pylint: disable=protected-access
 import os
 
@@ -6,8 +7,7 @@ import numpy as np
 from numpy import testing as npt
 
 from tmd.io import io
-from tmd.Tree import Tree
-from tmd.Tree import methods
+from tmd.Tree import Tree, methods
 
 _path = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(_path, "data")

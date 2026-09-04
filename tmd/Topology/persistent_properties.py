@@ -15,8 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from abc import ABC
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
 import numpy as np
 
@@ -78,7 +77,8 @@ class PersistentMeanRadius(PersistentProperty):
     def _section_mean_radii(tree_radii, section_begs, section_ends):
         """Returns the mean radius per section."""
         return np.fromiter(
-            (np.mean(tree_radii[b:e]) for b, e in zip(section_begs, section_ends)), dtype=float
+            (np.mean(tree_radii[b:e]) for b, e in zip(section_begs, section_ends, strict=False)),
+            dtype=float,
         )
 
 

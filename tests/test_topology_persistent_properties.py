@@ -1,4 +1,5 @@
 """Test tmd.Topology.persistent_properties."""
+
 # pylint: disable=protected-access
 import numpy as np
 from numpy import testing as npt

@@ -1,4 +1,5 @@
 """Test tmd.io.swc."""
+
 # pylint: disable=redefined-outer-name
 import os
 

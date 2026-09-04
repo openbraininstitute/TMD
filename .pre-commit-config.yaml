@@ -1,5 +1,5 @@
 default_language_version:
-  python: python3.8
+  python: python3.10
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -19,25 +19,14 @@ repos:
           stages:
             - commit-msg
           additional_dependencies: ['conventional-changelog-conventionalcommits']
-  - repo: https://github.com/pycqa/isort
-    rev: 5.11.5
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.12
     hooks:
-      - id: isort
-  - repo: https://github.com/psf/black
-    rev: 23.9.1
-    hooks:
-      - id: black
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.5
     hooks:
       - id: codespell
         args: ["-x", ".codespellignorelines"]
-  - repo: https://github.com/PyCQA/pydocstyle
-    rev: 6.3.0
-    hooks:
-      - id: pydocstyle
-        additional_dependencies: ["tomli"]
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.1.0
-    hooks:
-      - id: flake8

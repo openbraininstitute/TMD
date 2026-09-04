@@ -1,4 +1,5 @@
 """Example script to compute the diversity index from a set of classes."""
+
 import numpy as np
 
 

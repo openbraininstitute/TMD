@@ -19,9 +19,7 @@ import numpy as np
 import scipy.spatial as sp
 
 from tmd.Topology.analysis import sort_ph
-from tmd.Topology.persistent_properties import NoProperty
-from tmd.Topology.persistent_properties import PersistentAngles
-from tmd.Topology.persistent_properties import PersistentMeanRadius
+from tmd.Topology.persistent_properties import NoProperty, PersistentAngles, PersistentMeanRadius
 
 
 def write_ph(ph, output_file="test.txt"):
@@ -186,7 +184,7 @@ def get_lifetime(tree, feature="point_radial_distances"):
     rd = getattr(tree, "get_" + feature)()
     lifetime = np.array(len(begs) * [np.zeros(2)])
 
-    for i, (beg, end) in enumerate(zip(begs, ends)):
+    for i, (beg, end) in enumerate(zip(begs, ends, strict=False)):
         lifetime[i] = np.array([rd[beg], rd[end]])
 
     return lifetime

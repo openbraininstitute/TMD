@@ -85,8 +85,7 @@ def nosify(var, noise=0.1):
 
     .. code-block:: Python
 
-        noisy_pd = [add_noise(d, 1.0) if d[0] != 0.0
-                    else [d[0],add_noise([d[1]],1.0)[0]] for d in pd]
+        noisy_pd = [add_noise(d, 1.0) for d in pd]
 
     To output the new pd:
 
@@ -94,7 +93,7 @@ def nosify(var, noise=0.1):
 
         F = open(...)
         for d in noisy_pd:
-            towrite = '%f, %f\n'%(d[0],d[1])
+            towrite = "%f, %f\n" % (d[0], d[1])
             F.write(towrite)
         F.close()
     """

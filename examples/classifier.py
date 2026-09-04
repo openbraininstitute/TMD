@@ -1,4 +1,5 @@
 """Classifier examples."""
+
 import importlib
 
 import numpy as np
@@ -39,7 +40,7 @@ def predict(clf, data):
 
 
 def classify_cell_in_groups(
-    list_of_groups=["L5_UTPC", "L5_STPC", "L5_TTPC1", "L5_TTPC2"],
+    list_of_groups=None,
     cell_to_classify="./L5_TTPC1/C030796A-P3.h5",
     neurite_type="apical_dendrite",
     classifier_module=list_of_modules[0],
@@ -49,6 +50,8 @@ def classify_cell_in_groups(
     """Classify the cells in groups."""
     # ------------------------ Training dataset --------------------------------
     # Load all data from selected folders
+    if list_of_groups is None:
+        list_of_groups = ["L5_UTPC", "L5_STPC", "L5_TTPC1", "L5_TTPC2"]
     groups = [tmd.io.load_population(i) for i in list_of_groups]
     # Define labels depending on the number of neurons in each folder
     labels = [i + 1 for i, k in enumerate(groups) for j in k.neurons]
@@ -79,7 +82,7 @@ def classify_cell_in_groups(
 
     predict_labels = []
     # Train classifier with training images for selected number_of_trials
-    for i in range(number_of_trials):
+    for _i in range(number_of_trials):
         clf = train(classifier_module, classifier_method, train_dataset, labels)
         # Test classifier with test image and return predictions
         predict_labels.append(predict(clf, test_dataset))

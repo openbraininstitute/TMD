@@ -1,4 +1,5 @@
 """Examples for variability compputation."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import view
@@ -232,7 +233,7 @@ def multiplot_outliers(phs1, title=""):
 
     d_mean = np.mean(distances)
     d_std = np.std(distances)
-    outliers = np.where((np.array(distances) > d_mean + 2 * d_std))[0]
+    outliers = np.where(np.array(distances) > d_mean + 2 * d_std)[0]
     no_outliers = np.delete(np.arange(len(distances)), outliers)
 
     IMG_out = average_ph_image(np.array(imgs1)[outliers])
@@ -258,7 +259,7 @@ def outliers_distances(dist_list, n=2):
     d_mean = np.mean(dist_list)
     d_std = np.std(dist_list)
 
-    outliers = np.where((np.array(dist_list) > d_mean + n * d_std))[0]
+    outliers = np.where(np.array(dist_list) > d_mean + n * d_std)[0]
 
     return outliers, len(outliers), len(dist_list)
 
@@ -298,7 +299,7 @@ def example_run(filename="./Female/control 4h/IPL/", title=""):
 
     phs1 = []
 
-    for i, n in enumerate(pop.neurons):
+    for _i, n in enumerate(pop.neurons):
         try:
             p = tmd.methods.get_ph_neuron(n)
             if len(p) > 4:
@@ -318,7 +319,7 @@ def get_phs_clean(filename="./Female/control 4h/IPL/"):
 
     phs1 = []
 
-    for i, n in enumerate(pop.neurons):
+    for _i, n in enumerate(pop.neurons):
         try:
             p = tmd.methods.get_ph_neuron(n)
             if len(p) > 4:
@@ -686,7 +687,7 @@ def distance_number_of_cells(ph_list, step_size=10, samples=10, xlim=None, ylim=
         d4 = []
         d48 = []
 
-        for s in np.arange(samples):
+        for _s in np.arange(samples):
             Zns = []
             for ph in ph_list:
                 ph_random_indices = np.random.choice(np.arange(len(ph)), int(i), replace=False)

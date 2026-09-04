@@ -162,7 +162,7 @@ def save_plot(fig, **kwargs):
     Args:
         fig: matplotlib figure
 
-    Keyword args:
+    Keyword Args:
         prefile : str
             String to include before the general filename of the figure.
             Default is None.
@@ -218,7 +218,7 @@ def plot_style(fig, ax, **kwargs):
     Args:
         ax: matplotlib axes
 
-    Keyword args:
+    Keyword Args:
         pretitle : str
             String to include before the general title of the figure.
             Default value is None.
@@ -447,7 +447,7 @@ def plot_title(fig, ax, **kwargs):
 
         ax: matplotlib axes
 
-    Keyword args:
+    Keyword Args:
         pretitle : str
             String to include before the general title of the figure.
             Default value is None.
@@ -491,12 +491,12 @@ def plot_title(fig, ax, **kwargs):
 def plot_labels(fig, ax, **kwargs):
     """Function that defines the labels options of a matplotlib plot.
 
-    Args
+    Args:
         fig: matplotlib figure
 
         ax: matplotlib axes
 
-    Keyword args:
+    Keyword Args:
         xlabel : str
             The xlabel for the figure.
             For no_xlabel set to ''.
@@ -564,12 +564,12 @@ def plot_labels(fig, ax, **kwargs):
 def plot_ticks(fig, ax, **kwargs):
     """Function that defines the labels options of a matplotlib plot.
 
-    Args
+    Args:
         fig: matplotlib figure
 
         ax: matplotlib axes
 
-    Keyword args:
+    Keyword Args:
         xticks : list of ticks
             Defines the values of x ticks in the figure.
             If None the xticks will not be modified.
@@ -651,7 +651,7 @@ def plot_limits(fig, ax, **kwargs):
 
         ax: matplotlib axes
 
-    Keyword args:
+    Keyword Args:
         no_limits : boolean
             Defines the presence of plot limits in the figure.
             Default value is False.
@@ -701,7 +701,7 @@ def plot_legend(fig, ax, **kwargs):
 
         ax: matplotlib axes
 
-    Keyword args:
+    Keyword Args:
         no_legend : boolean
             Defines the presence of a legend in the figure.
             If True the legend will not be included in the Figure.

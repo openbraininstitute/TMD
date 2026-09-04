@@ -1,4 +1,5 @@
 """Example for distance computation."""
+
 import numpy as np
 
 import tmd
