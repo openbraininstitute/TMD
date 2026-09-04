@@ -5,10 +5,10 @@ from pathlib import Path
 from setuptools import find_namespace_packages, setup
 
 reqs = [
-    "h5py>=2.9.0",
-    "scipy>=1.4.0",
-    "numpy>=1.18.0",
-    "scikit-learn>=0.22.0",
+    "h5py>=3.6.0",
+    "scipy>=1.8.0",
+    "numpy>=1.22.0",
+    "scikit-learn>=1.0.2",
     "munkres>=1.0.12",
     "cached-property>=1.5.1",
     "morphio>=3.3.4,<4",
@@ -24,7 +24,7 @@ doc_reqs = [
 
 test_reqs = [
     "mock>=3",
-    "pytest>=6",
+    "pytest>=7",
     "pytest-cov>=3",
     "pytest-html>=2",
 ]
@@ -51,7 +51,7 @@ setup(
     extras_require={
         "docs": doc_reqs,
         "test": test_reqs,
-        "viewer": ["matplotlib>=3.2.0"],
+        "viewer": ["matplotlib>=3.4.0"],
     },
     include_package_data=True,
     classifiers=[
